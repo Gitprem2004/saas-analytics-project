@@ -19,11 +19,11 @@ class Settings:
     def CORS_ORIGINS(self) -> List[str]:
         origins = [
             "http://localhost:3000",
-            "https://saas-analytics-assistant-backend.onrender.com",
+            "http://localhost:8000",
         ]
         
         # Add production frontend URL from environment
-        frontend_url = os.getenv("https://saas-analytics-assistant-backend.onrender.com", "")
+        frontend_url = os.getenv("http://localhost:8000", "")
         if frontend_url:
             origins.append(frontend_url)
             
