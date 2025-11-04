@@ -1,183 +1,159 @@
-<<<<<<< HEAD
-# SaaS Analytics Assistant
+# SaaS Analytics Project
 
-AI-powered natural language interface for business intelligence. Ask questions about your SaaS metrics in plain English and get instant SQL queries, visualizations, and insights powered by Google Gemini AI.
+An AI-powered analytics assistant for SaaS businesses. This tool allows you to ask questions in plain English and instantly receive SQL queries, data visualizations, and actionable insights.
 
-## Features
+> ⚠️ Currently runs **locally only**. Not deployed online yet.
+> Future plan: Deploy Backend (Railway) & Frontend (Vercel)
 
-- **Natural Language Queries**: Convert plain English questions to SQL automatically
-- **Real-time Visualizations**: Interactive charts (pie/bar) and data tables
-- **AI-Generated Insights**: Business recommendations based on query results
-- **Query History**: Track and reuse previous queries
-- **Data Export**: Download results as CSV
-- **Sample Dataset**: Pre-populated with 1000+ users, subscriptions, events, and revenue records
+---
 
-## Tech Stack
+## 🚀 Features
+
+✅ Natural Language to SQL Query Conversion  
+✅ AI-Generated Insights using Google Gemini  
+✅ Interactive Visualizations (Pie/Bar charts)  
+✅ Query History & CSV Export  
+✅ Ready-to-use Sample SaaS Dataset  
+✅ Full-Stack Solution (React + FastAPI + SQLite)
+
+---
+
+## 🏗️ Tech Stack
 
 ### Frontend
 - React with TypeScript
-- Chart.js for data visualization
-- Responsive CSS design
+- Chart.js
+- Axios
+- Responsive CSS
 
 ### Backend
-- FastAPI (Python web framework)
+- FastAPI
 - SQLAlchemy ORM
-- SQLite database
-- Google Gemini Pro AI (free tier)
+- SQLite
+- Google Gemini Pro API
 
-## Architecture
-Frontend (React) → Backend API (FastAPI) → Gemini AI → SQL Generation → Database → Results
+---
 
-## Sample Queries
+## 🔌 Architecture
 
-- "How many total users do we have?"
-- "What's our monthly recurring revenue?"
-- "Show me user signups by month"
-- "What's our customer churn rate?"
-- "Which features are most popular?"
-- "What's the conversion rate from free to paid plans?"
+Frontend (React)  
+⬇  
+Backend API (FastAPI)  
+⬇  
+Gemini AI → SQL Generation  
+⬇  
+Database → Query Results + Insights
 
-## Local Development Setup
+---
 
-### Prerequisites 
-- Python 3.11 or higher
-- Node.js 18 or higher
-- Git
+## 🖥️ Local Setup Guide
 
-### Backend Setup
+### ✅ Prerequisites
+- Python 3.11+
+- Node.js 18+
+- Git installed
+
+---
+
+### 🔹 Backend Setup
 ```bash
 cd backend
 pip install -r requirements.txt
 cp .env.example .env
-# Edit .env and add your GEMINI_API_KEY
+# Add your GEMINI_API_KEY in .env
 uvicorn app.main:app --reload --port 8000
 
-### Frontend Setup
+✅ API Docs available at → http://localhost:8000/docs
+✅ Optional sample data loading → http://localhost:8000/api/generate-data
+
+### 🔹 frontend setup
+
 cd frontend
 npm install
 cp .env.example .env
 npm start
 
-###Initialize Database
-
-Visit http://localhost:8000/api/generate-data or use the API docs at http://localhost:8000/docs
-
-##Environment Variables
-###Backend (.env)
-GEMINI_API_KEY=your_key_here  # Get from https://aistudio.google.com/app/apikey
+**🔑 Environment Variables**
+**Backend .env**
+GEMINI_API_KEY=your_key_here
 DATABASE_URL=sqlite:///./saas_analytics.db
 ENVIRONMENT=development
 
-###Frontend (.env)
-REACT_APP_API_URL=http://localhost:8000
+---
 
-##API Endpoints
+## 🖥️ Local Development Setup
 
-GET / - Health check
-POST /api/query - Analyze natural language query
-POST /api/generate-data - Generate sample SaaS data
-POST /api/initialize-database - Initialize database for deployment
-GET /docs - Interactive API documentation
+### ✅ Prerequisites
 
-#Project Structure
-
-saas-analytics-assistant/
-├── backend/
-│   ├── app/
-│   │   ├── main.py           # FastAPI application
-│   │   ├── database.py       # Database configuration
-│   │   ├── config.py         # Settings management
-│   │   ├── models/
-│   │   │   └── saas_models.py    # SQLAlchemy models
-│   │   └── services/
-│   │       ├── ai_service.py     # Gemini AI integration
-│   │       └── data_generator.py # Sample data creation
-│   ├── requirements.txt
-│   └── .env
-├── frontend/
-│   ├── src/
-│   │   ├── App.tsx          # Main React component
-│   │   └── App.css
-│   ├── package.json
-│   └── .env
-└── README.md
-
-#Deployment
-##Backend (Railway)
-
-Push code to GitHub
-Create new project on Railway.app
-Connect GitHub repository
-Add environment variables
-Deploy automatically
-
-##Frontend (Vercel)
-
-Push code to GitHub
-Import project on Vercel.com
-Set root directory to frontend
-Add environment variables
-
-#Deploy
-
-#Live Demo
-[Add your deployment URL here]
-
-#Screenshots
-
-[Add screenshots of your application showing different queries and visualizations]
-
-#Key Learnings
-
-This project demonstrates:
-
-Full-stack development (React + FastAPI)
-AI integration with Google Gemini
-Natural language processing for SQL generation
-Data visualization with Chart.js
-RESTful API design
-Database modeling for SaaS metrics
-Deployment to cloud platforms
-
-##Future Enhancements
-
-User authentication and multi-tenancy
-Real-time database connections (PostgreSQL, MySQL)
-Advanced chart types (line graphs, heatmaps)
-Scheduled report generation
-Export to PDF with formatted reports
-Query optimization and caching
-More complex analytical queries
-
-#License
-MIT License
-Author
-PREMKUMAR S
-
-GitHub: https://github.com/Gitprem2004
-LinkedIn: https://www.linkedin.com/in/prem19
-Email: premkarthik30@gmail.com
-
-#Acknowledgments
-
-Google Gemini AI for natural language processing
-FastAPI framework
-React and Chart.js communities
+| Requirement | Version |
+|------------|---------|
+| Python | 3.11 or higher |
+| Node.js | 18 or higher |
+| Git | Latest |
 
 ---
 
-## **NOW YOU'RE DEPLOYMENT READY**
+### 🔹 Backend Setup
 
-All pre-deployment fixes are complete:
-- Security (gitignore, env files)
-- Database initialization
-- Error handling
-- Configuration management
-- Professional documentation
+```bash
+cd backend
+pip install -r requirements.txt
+cp .env.example .env
+# Add your GEMINI_API_KEY in .env
+uvicorn app.main:app --reload --port 8000
 
-**Next step: Push to GitHub and deploy to Railway + Vercel**
+### frontend .env
+REACT_APP_API_URL=http://localhost:8000
 
-Ready to proceed with deployment?
-=======
-# saas-analytics-project
->>>>>>> 759e3b0a1d3b1e3a6e001f3122f3b5db78cae541
+| Method | Endpoint                   | Description                |
+| ------ | -------------------------- | -------------------------- |
+| GET    | `/`                        | Health check               |
+| POST   | `/api/query`               | AI Query + SQL Execution   |
+| POST   | `/api/generate-data`       | Create sample SaaS dataset |
+| POST   | `/api/initialize-database` | Setup database schema      |
+| GET    | `/docs`                    | Swagger UI                 |
+
+**Project folder structure**
+saas-analytics-project/
+│
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── database.py
+│   │   ├── models/
+│   │   └── services/
+│   ├── requirements.txt
+│   └── .env
+│
+├── frontend/
+│   ├── src/
+│   ├── package.json
+│   └── .env
+│
+└── README.md
+
+
+🔮 Future Enhancements
+
+User Authentication & Access Roles
+
+PostgreSQL / MySQL Cloud DB
+
+Advanced SaaS Dashboards (Retention, LTV, NPS)
+
+Export as PDF Reports
+
+Real-Time Streaming Data
+
+Scheduled Email Reports
+
+👤 Author
+
+Premkumar S
+
+GitHub: https://github.com/Gitprem2004
+
+LinkedIn: https://www.linkedin.com/in/prem19
+
+Email: premkarthik30@gmail.com
