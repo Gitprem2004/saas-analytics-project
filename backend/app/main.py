@@ -27,7 +27,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://saas-analytics-assistant.vercel.app",
+        "http://localhost:8000",
         "https://*.vercel.app",  # All Vercel preview deployments
     ],
     allow_credentials=True,

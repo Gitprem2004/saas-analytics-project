@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SaaS Analytics Assistant
 
 AI-powered natural language interface for business intelligence. Ask questions about your SaaS metrics in plain English and get instant SQL queries, visualizations, and insights powered by Google Gemini AI.
@@ -177,3 +178,6 @@ All pre-deployment fixes are complete:
 **Next step: Push to GitHub and deploy to Railway + Vercel**
 
 Ready to proceed with deployment?
+=======
+# saas-analytics-project
+>>>>>>> 759e3b0a1d3b1e3a6e001f3122f3b5db78cae541
